@@ -3,10 +3,13 @@ class HCSR04
 {
 	public:
 	HCSR04(int out,int echo);				//initialisation class HCSR04 (trig pin , echo pin)
+	HCSR04(int out,int echo[]);				//initialisation class HCSR04 (trig pin , echo pin)
 	~HCSR04();								//destructor
 	float dist()      const;				//return curent distance of element 0
+	float dist(int n)      const;				//return curent distance of element 0
 
 	private:
+	void init(int out,int echo[]); 			//for constructor
 	int out;								//out pin
-	int echo;								//echo pin list
+	int *echo;								//echo pin list
 };
