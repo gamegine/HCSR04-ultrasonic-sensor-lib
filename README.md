@@ -11,7 +11,7 @@ Documentation for the library is on the
 
 [basic example](examples/HCSR04/HCSR04.ino)
 
-![schéma](examples/HCSR04/HC_SR04_cabling.jpg)
+![schéma HC_SR04_cabling](examples/HCSR04/HC_SR04_cabling.jpg)
 ```ino
 #include <HCSR04.h>
 
@@ -22,6 +22,19 @@ void setup()
 
 void loop() 
 { Serial.println( hc.dist() ); } //return current distance (cm) in serial
+```
+> if you want use a multiple sensor   
+![schéma HC_SR04_multi_cabling](examples/HCSR04_multi/HC_SR04_cabling.png)
+```ino
+#include <HCSR04.h>
+
+HCSR04 hc(2,new int[6]{5,6,7,8,9,10});//initialisation class HCSR04 (trig pin , echo pin)
+
+void setup()
+{ Serial.begin(9600); }
+
+void loop()
+{ for (int i = 0; i < 6; i++ ) {Serial.println( hc.dist(i) );} }//return curent distance (cm) in serial for sensor 1 to 6
 ```
 
 Download
