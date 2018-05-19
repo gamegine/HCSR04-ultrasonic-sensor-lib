@@ -24,6 +24,9 @@ float HCSR04::dist(int n) const
 	digitalWrite(this->out, HIGH);
 	delayMicroseconds(10);
 	digitalWrite(this->out, LOW);
-	return pulseIn(this->echo[n], HIGH) / 58.0;
+	noInterrupts();
+	float d=pulseIn(this->echo[n], HIGH);
+	interrupts();
+	return d / 58.0;
 }
 float HCSR04::dist() const{return this->dist(0);}
