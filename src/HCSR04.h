@@ -6,7 +6,7 @@ class HCSR04
 	HCSR04(int out,int echo[],int n);		//initialisation class HCSR04 (trig pin , echo pin)
 	~HCSR04();								//destructor
 	float dist()      const;				//return curent distance of element 0
-	float dist(int n)      const;				//return curent distance of element 0
+	float dist(int n)      const;				//return curent distance of element n
 
 	private:
 	void init(int out,int echo[],int n); 			//for constructor
