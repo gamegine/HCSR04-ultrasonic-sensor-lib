@@ -16,7 +16,7 @@ Documentation for the library is on the
 ```ino
 #include <HCSR04.h>
 
-HCSR04 hc(5, 6); //initialisation class HCSR04 (trig pin , echo pin)
+HCSR04 hc(2, 3); //initialisation class HCSR04 (trig pin , echo pin)
 
 void setup()
 { Serial.begin(9600); }
